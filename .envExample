@@ -1,0 +1,5 @@
+PORT = 8080
+IP_ADDRESS = "10.10.8.90"
+
+DB_CONNECTION='mongodb+srv://fernandoalmeidaxp:MjDmFWgrFidllLT6@clustermt.muwsrlu.mongodb.net/Api_MT'
+JWT_SECRET_KEY = 'TuClaveSecretaJWT'
