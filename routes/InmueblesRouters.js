@@ -12,7 +12,7 @@ const inmueblesRoutes = express.Router();
 inmueblesRoutes.post("/create",authenticateToken, createInmueble);
 inmueblesRoutes.get('/:numero_referencia',authenticateToken, getInmuebleByReference);
 inmueblesRoutes.get("/",authenticateToken, listarInmuebles);
-inmueblesRoutes.get("/visita/create/:numero_referencia",authenticateToken, createInmuebleVisit);
+inmueblesRoutes.post("/visita/create/:numero_referencia",authenticateToken, createInmuebleVisit);
 
 
 export default inmueblesRoutes;
