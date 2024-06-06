@@ -20,6 +20,6 @@ usuariosRoutes.post("/create",[
     check('correo', 'El correo no es válido').isEmail(),
     check('password').isLength({min: 8}),
     
-] , authenticateToken, createUsuario);
+], createUsuario);
 
 export default usuariosRoutes;

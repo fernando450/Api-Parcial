@@ -2,10 +2,10 @@
   "name": "api_inmuebles",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "npx nodemon app.js" 
+    "dev": "npx nodemon app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
