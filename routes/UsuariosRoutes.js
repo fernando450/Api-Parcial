@@ -22,4 +22,5 @@ usuariosRoutes.post("/create",[
     
 ], createUsuario);
 
+
 export default usuariosRoutes;
