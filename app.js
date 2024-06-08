@@ -14,7 +14,7 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-    origin: 'http://localhost:4200'
+    origin: 'https://parcial-angular-a9efa.web.app'
 }));
 
 //Mensinar que las respuestas seran en tipo Json
