@@ -9,7 +9,7 @@ export async function login(req, res){
     try {
         const usuario = await Usuario.findOne({ correo });
         if (!usuario) {
-            return res.status(404).json({ message: 'Las credenciales son incorrectas' });
+            return res.status(404).json({ message: correo+' no esta registrado' });
         }
         
         
@@ -25,7 +25,7 @@ export async function login(req, res){
 
                 
         const token = jwt.sign(payload, jwtSecretKey, { expiresIn: '1h' });
-
+        console.log(token);
         res.json({ token });
 
     } catch (error) {

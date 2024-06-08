@@ -18,9 +18,21 @@ export async function getUsuarios(req, res, next) {
 export async function createUsuario(req, res, next) {
     try {
         const usuario = new Usuario(req.body);
+        //Verificar que el usuario no este registrado por email
+        const existeIdent = await Usuario.findOne({ identificacion: req.body.identificacion });
+        if (existeIdent) {
+            return res.status(400).json({ message: existeIdent.identificacion+' ya ha sido REGISTRADO' });
+        }
+        //Verificar que el usuario no este registrado porcorreo
+        const existeCorre = await Usuario.findOne({ correo: req.body.correo });
+        if (existeCorre) {
+            return res.status(400).json({ message: existeCorre.correo+' ya ha sido REGISTRADO' });
+        }
+        //Encriptar la password
         usuario.password = await bcryptjs.hash(req.body.password, 10);
         await usuario.save();
         res.json(usuario);
+        
     } catch (error) {
         next(error);
     }
